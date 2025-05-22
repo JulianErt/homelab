@@ -1,5 +1,5 @@
 # My homelab setup
-this is a *work in progress*. I still have a much to update and add!
+this is a *work in progress*. I still have much to update and add!
 
 # Hardware
 
