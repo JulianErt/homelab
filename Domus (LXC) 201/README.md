@@ -1,4 +1,4 @@
-# 🏡 Homelab – Proxmox + Ubuntu LXC (`domus201`)
+# 🏡 Ubuntu LXC `DOMUS 201`
 
 This repository documents the setup and configuration of my homelab environment based on Proxmox VE. It serves as a platform for learning, self-hosting, testing new tools, and managing infrastructure in a reproducible way.
 
@@ -6,20 +6,9 @@ This repository documents the setup and configuration of my homelab environment 
 
 - **Hypervisor:** [Proxmox VE](https://www.proxmox.com/en/proxmox-ve)
 - **Container Type:** LXC (Lightweight Ubuntu)
-- **Hostname:** `domus201`
+- **Hostname:** `domus`
 - **Purpose:** General services, sandbox testing, self-hosted apps
 - **Design Goals:** Modular, secure, minimal
-
-## 📁 Repository Structure
-
-homelab/
-├── README.md
-├── config/
-│ └── domus201-init.sh # Optional post-create setup script
-├── docs/
-│ └── network.md # Network layout and VLANs
-└── inventory/
-└── proxmox.yml # Overview of nodes and containers
 
 
 ## 🛠️ Setup Instructions
@@ -27,7 +16,7 @@ homelab/
 ```
 # Create LXC container on Proxmox
 pct create 201 local:vztmpl/ubuntu-22.04-standard_*.tar.gz \
-  --hostname domus201 \
+  --hostname domus \
   --cores 2 \
   --memory 2048 \
   --net0 name=eth0,bridge=vmbr0,ip=dhcp \
@@ -39,10 +28,10 @@ pct create 201 local:vztmpl/ubuntu-22.04-standard_*.tar.gz \
 pct start 201
 
 # Run initial setup (optional)
-pct exec 201 -- bash -c "curl -s https://raw.githubusercontent.com/<your-username>/homelab/main/config/domus201-init.sh | bash"
+pct exec 201 -- bash -c "curl -s https://raw.githubusercontent.com/<your-username>/homelab/main/config/domus-init.sh | bash"
 ```
 ```markdown
-## 🧩 Planned Services on `domus201`
+## 🧩 Planned Services on `domus`
 
 - [ ] Docker + Portainer
 - [ ] Pi-hole (DNS-level ad blocking)
@@ -57,5 +46,4 @@ pct exec 201 -- bash -c "curl -s https://raw.githubusercontent.com/<your-usernam
 | Proxmox VE   | Virtualization platform  |
 | LXC          | Container virtualization |
 | Docker       | Application management   |
-| Tailscale    | VPN mesh network         |
 | GitHub       | Version control          |
