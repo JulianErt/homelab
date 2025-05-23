@@ -1,4 +1,5 @@
 # Jellyfin Setup
+Running on servarr(202)
 ## Data Directory
 ### Folder Mapping
 It's good practise to give all containers the same access to the same root directory or share. This is why all containers in the compose file have the bind volume mount ```/data:/data```. It makes everything easier, plus passing in two volumes such as the commonly suggested /tv, /movies, and /downloads makes them look like two different file systems, even if they are a single file system outside the container. See my current setup below.
