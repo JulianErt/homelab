@@ -32,21 +32,11 @@ This focuses on trascoding with Intel QuickSync. In my experiance it is simply t
 #### Running on a VM (Recommened)
 Under your virutal machine Proxmox click the Hardware option on the sidebar. From there select Add > PCI Device. Then select Raw and pick the device that we will use for Quicksync or another GPU if you're not using Quicksync. For Quicksync it's often the very first Intel device that will say something like "Alderlake" in the name.
 
-#### Running on a Unprivlaged LXC
-If you're running Jellyfin directly on the LXC that houses all your media. You will need to manually add the following to you LXC configuration. Add the lines below to your containers configuration under changing the ID to match the container you've installed Jellyfin on.
-```
-nano /etc/pve/lxc/100.conf
-```
-```
-#Add these for Intel QuickSync
-dev0: /dev/dri/card0,gid=44
-dev1: /dev/dri/renderD128,gid=104
-```
 ### Ubuntu Setup
-The following steps take place on the Ubuntu server, virtual machine or Proxmox LXC you're running Jellyfin on. Add jellyfin (and the user you're running jellyfin as that) to the render group.
+The following steps take place on the Ubuntu server virtual machine. Add jellyfin (and the user you're running jellyfin as that) to the render group.
 ```
 sudo usermod -aG render jellyfin
-sudo usermod -aG render brandon # since I'm running jellyfin as my user
+sudo usermod -aG render julian # since I'm running jellyfin as my user
 sudo systemctl restart jellyfin
 ```
 Now we can confirm hardware transcoding is ready by intstalling the `intel-gpu-tools` package and running the command `intel_gpu_top`.
