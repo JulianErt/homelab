@@ -5,7 +5,7 @@ services:
     environment:
       - PUID=1000
       - PGID=1000
-      - TZ=Germany/Berlin
+      - TZ=Europe/Berlin
       - JELLYFIN_PublishedServerUrl=http://192.168.178.202 #optional
     volumes:
       - ./config:/config

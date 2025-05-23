@@ -1,0 +1,19 @@
+  GNU nano 7.2                                          compose.yaml                                                    services:
+  plex:
+    image: lscr.io/linuxserver/plex:latest
+    container_name: plex
+    network_mode: host
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Europe/Berlin
+      - VERSION=docker
+      - PLEX_CLAIM=claim-Z4t7HFtXE2EzYnJmVyno #optional
+    ports:
+      - 32400:32400
+    devices:
+     - /dev/dri:/dev/dri # QuickSync
+    volumes:
+      - ./plex:/config
+      - /data:/data
+    restart: unless-stopped
