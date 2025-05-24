@@ -22,7 +22,7 @@ It serves as a platform for self-hosting, learning, automation, and infrastructu
 
 ## 📦 Container / VM Configuration
 
----
+[Proxmox Helper-Scripts](https://community-scripts.github.io/ProxmoxVE)
 
 ### 🏡 `DOMUS` (LXC 201)
 
