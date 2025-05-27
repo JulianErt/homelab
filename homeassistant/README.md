@@ -14,15 +14,15 @@ port: /dev/ttyUSB0
 ``` 
 
 
-# Improving Privacy with Amazon Alexa and Pi-hole
+## Improving Privacy with Amazon Alexa and Pi-hole
 
-## Goal
+### Goal
 
 Enhance the privacy of Amazon Alexa without breaking core functionality (music, voice commands, smart home control). The goal is **not** to block Alexa from the internet entirely, but to **reduce tracking and data collection** through DNS filtering and strict Amazon-side privacy settings.
 
 ---
 
-## 1. Amazon Alexa Privacy Settings
+### 1. Amazon Alexa Privacy Settings
 
 Go to your Alexa settings:
 
@@ -39,13 +39,12 @@ These steps reduce the amount of data Amazon stores and uses for analysis or imp
 
 ---
 
-## 2. Network-Level Filtering with Pi-hole
+### 2. Network-Level Filtering with Pi-hole
 
 To reduce tracking and unnecessary external connections, install a DNS filter like **Pi-hole** in your home network.
 
-### 🖥️ Setup: Pi-hole on Proxmox
+#### Setup: Pi-hole on Proxmox
 
--
 Configure FritzBox to use Pi-hole
 
 - Open FRITZ!Box UI 
@@ -55,7 +54,7 @@ Configure FritzBox to use Pi-hole
 - Save and reboot the router
 
 
-## 3. Filter Alexa-Specific Domains (Optional)
+### 3. Filter Alexa-Specific Domains (Optional)
 
 You can enhance filtering by adding known Alexa tracking domains to Pi-hole’s blacklist. Some examples:
 ```
