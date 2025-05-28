@@ -63,5 +63,4 @@ alexa.amazon.com
 softwareupdates.amazon.com
 ```
 
-⚠️ Do not block all Alexa-related domains — otherwise Alexa will stop working. Test each rule carefully.
 
